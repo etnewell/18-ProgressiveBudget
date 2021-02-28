@@ -1,5 +1,6 @@
 let transactions = [];
 let myChart;
+// const db = require('db.js')
 
 fetch("/api/transaction")
   .then(response => {
@@ -144,10 +145,13 @@ function sendTransaction(isAdding) {
   });
 }
 
-document.querySelector("#add-btn").onclick = function() {
+document.querySelector("#add-btn").onclick = function(event) {
+  event.preventDefault()
   sendTransaction(true);
 };
 
-document.querySelector("#sub-btn").onclick = function() {
+document.querySelector("#sub-btn").onclick = function(event) {
+  event.preventDefault()
   sendTransaction(false);
 };
+
