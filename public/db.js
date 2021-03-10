@@ -1,7 +1,7 @@
 let db;
 // create a new db request for a "budget" database.
 const request = window.indexedDB.open("budget", 1);
-// request();
+request();
 
 console.log("the db file was called")
 request.onupgradeneeded = function(event) {
